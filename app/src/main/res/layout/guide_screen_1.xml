@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutGuide1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- PANEL MAGICO -->
+        <LinearLayout
+            android:id="@+id/panelBienvenida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_spyro_welcome"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="0dp"
+            android:layout_marginBottom="32dp">
+
+            <!-- TITULO -->
+            <TextView
+                android:id="@+id/tituloBienvenida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BIENVENIDO"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- IMAGEN CENTRAL -->
+            <ImageView
+                android:id="@+id/imgDecorativa"
+                android:layout_width="wrap_content"
+                android:layout_height="172dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/spyro" />
+
+            <!-- TEXTO MULTILINEA -->
+            <TextView
+                android:id="@+id/descripcionBienvenida"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="Esta es la guía de Spyro the Dragon\n Aquí aprenderás los secretos de este mundo mágico, y a navegar por la aplicación.\n¿Listo para empezar?"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <!-- BOTON CON PNG COMO FONDO -->
+            <Button
+                android:id="@+id/btnComenzar"
+                android:layout_width="wrap_content"
+                android:layout_height="260sp"
+                android:background="@drawable/btn_gems_background"
+                android:text="COMENZAR"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+

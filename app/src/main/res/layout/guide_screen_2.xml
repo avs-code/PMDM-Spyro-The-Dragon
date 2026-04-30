@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AA000000"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- CONTENEDOR DEL BOCADILLO -->
+    <LinearLayout
+        android:id="@+id/bubbleContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bubble_info"
+        android:padding="20dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="110dp"
+        android:animation="@anim/bounce">
+
+        <TextView
+            android:id="@+id/textBubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aquí podrás explorar a todos los personajes del mundo de Spyro."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- FLECHA SEÑALANDO LA PESTAÑA PERSONAJES -->
+    <ImageView
+        android:id="@+id/arrowCharacters"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/bubble_arrow_left"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="40dp"
+        android:animation="@anim/bounce" />
+
+    <!-- BOTONES DE ACCIÓN -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_gravity="bottom"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnOmitir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Omitir"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_transparent"
+            android:padding="12dp"/>
+
+        <Button
+            android:id="@+id/btnSiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siguiente"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_gems_background"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:layout_marginStart="12dp"/>
+    </LinearLayout>
+
+</FrameLayout>

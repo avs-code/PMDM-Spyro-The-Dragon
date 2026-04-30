@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Estado pulsado -->
+    <item android:state_pressed="true">
+        <bitmap
+            android:src="@drawable/gems"
+            android:gravity="center"
+            android:alpha="0.85" />
+    </item>
+
+    <!-- Estado normal -->
+    <item>
+        <bitmap
+            android:src="@drawable/gems"
+            android:gravity="center" />
+    </item>
+
+</selector>

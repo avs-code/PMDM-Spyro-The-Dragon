@@ -3,6 +3,8 @@ package dam.pmdm.spyrothedragon
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.FrameLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var navController: NavController? = null
+    private var currentGuideScreen = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +51,12 @@ class MainActivity : AppCompatActivity() {
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 }
             }
+        }
+        val prefs = getSharedPreferences("guide", MODE_PRIVATE)
+        val shown = prefs.getBoolean("shown", false)
+
+        if (!shown) {
+            showGuideScreen(R.layout.guide_screen_1)
         }
     }
 
@@ -83,5 +92,47 @@ class MainActivity : AppCompatActivity() {
             .setMessage(R.string.text_about)
             .setPositiveButton(R.string.accept, null)
             .show()
+    }
+
+    fun showGuideScreen(layoutId: Int) {
+        val container = findViewById<FrameLayout>(R.id.guideOverlayContainer)
+        container.removeAllViews()
+
+        val view = layoutInflater.inflate(layoutId, container, false)
+        container.addView(view)
+
+        container.visibility = View.VISIBLE
+
+        // Botón siguiente
+        view.findViewById<View?>(R.id.btnSiguiente)?.setOnClickListener {
+            nextGuideScreen()
+        }
+
+        // Botón omitir
+        view.findViewById<View?>(R.id.btnOmitir)?.setOnClickListener {
+            endGuide()
+        }
+    }
+
+    fun hideGuide() {
+        findViewById<FrameLayout>(R.id.guideOverlayContainer).visibility = View.GONE
+    }
+
+    fun nextGuideScreen() {
+        currentGuideScreen++
+
+        when (currentGuideScreen) {
+            2 -> showGuideScreen(R.layout.guide_screen_2)
+            3 -> showGuideScreen(R.layout.guide_screen_3)
+            4 -> showGuideScreen(R.layout.guide_screen_4)
+            5 -> showGuideScreen(R.layout.guide_screen_5)
+            6 -> showGuideScreen(R.layout.guide_screen_6)
+            else -> endGuide()
+        }
+    }
+    fun endGuide() {
+        val prefs = getSharedPreferences("guide", MODE_PRIVATE)
+        prefs.edit().putBoolean("shown", true).apply()
+        hideGuide()
     }
 }

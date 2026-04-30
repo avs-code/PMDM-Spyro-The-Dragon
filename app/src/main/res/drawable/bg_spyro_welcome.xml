@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sombra exterior -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#33000000"/>
+            <corners android:radius="28dp"/>
+        </shape>
+    </item>
+
+    <!-- Panel principal -->
+    <item
+        android:left="6dp"
+        android:top="6dp"
+        android:right="6dp"
+        android:bottom="6dp">
+
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#805A2DA8"
+                android:endColor="#808A4FFF"
+                android:angle="45"/>
+
+            <corners android:radius="28dp"/>
+
+            <padding
+                android:left="24dp"
+                android:top="24dp"
+                android:right="24dp"
+                android:bottom="24dp"/>
+        </shape>
+    </item>
+
+    <!-- Brillo superior -->
+    <item android:top="0dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#40FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:angle="90"/>
+            <corners android:radius="28dp"/>
+        </shape>
+    </item>
+
+</layer-list>
